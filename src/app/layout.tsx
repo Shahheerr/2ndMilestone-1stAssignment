@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header>
+          <nav>
+            <Link href="/">Home</Link>
+            <Link href="/books">Books</Link>
+            <Link href="/about">About</Link>
+          </nav>
+        </header>
         {children}
+        <footer>
+          <p>&copy; 2023 BookNook. All rights reserved.</p>
+        </footer>
       </body>
     </html>
   );
